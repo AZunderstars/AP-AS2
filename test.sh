@@ -8,10 +8,11 @@ do
 if [ $i -ne 2 ] || [ $j -ne 10 ]
 then
 echo "test $j diff:"
-./a.out < tests/Q$i/$j/$j.in > 1.out
-diff 1.out tests/Q$i/$j/$j.out
+./a.out < tests/Q$i/$j/$j.in > test.out
+diff test.out tests/Q$i/$j/$j.out
 printf "\n"
 fi
 done
 done
-printf "\n"
+rm test.out
+rm a.out
