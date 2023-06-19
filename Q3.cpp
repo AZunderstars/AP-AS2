@@ -19,10 +19,7 @@ const string NO_PATH = "No path found\n";
 
 bool is_legal_move(vector<string> &board, int panda_row, int panda_col)
 {
-    if (panda_row >= board.size() || panda_row < 0 || panda_col >= board[0].size() || panda_col < 0 || board[panda_row][panda_col] == ROCK)
-        return false;
-    else
-        return true;
+    return panda_row < board.size() && panda_row >= 0 && panda_col < board[0].size() && panda_col >= 0 && board[panda_row][panda_col] != ROCK;
 }
 
 void next_directions(int delta_row, int &next_dir_row1, int &next_dir_col1, int &next_dir_row2, int &next_dir_col2)

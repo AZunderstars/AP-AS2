@@ -9,7 +9,6 @@ questions=4
 for j in $( seq 1 $questions)
     do
     g++ Q$j.cpp
-    echo "$j"
     if [ $? -eq 0 ];
     then
         total=10
